@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1035799126686",
+    "project_id": "autohygro",
+    "storage_bucket": "autohygro.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1035799126686:android:5a736a95be8b28869ad18f",
+        "android_client_info": {
+          "package_name": "schemas.android.com"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAOG6-1XWqqMev-I-0juWelQBqTmYhYfMg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
