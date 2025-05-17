@@ -1,9 +1,16 @@
+import 'firebase_options.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:firebase_core/firebase_core.dart';  // Add this import
 import 'home_screen.dart';
-import 'models/user_provider.dart'; // Make sure this path is correct
+import 'models/user_provider.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();        // Required for async in main
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform, // From your generated firebase_options.dart
+  );
+
   runApp(
     ChangeNotifierProvider(
       create: (context) => UserProvider(),
@@ -19,8 +26,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Autohygro',
       theme: ThemeData(
-        primaryColor: Color(0xFF060663), // Your custom color
-        fontFamily: 'Ubuntu',            // Your font
+        primaryColor: Color(0xFF060663),
+        fontFamily: 'Ubuntu',
       ),
       home: HomeScreen(),
     );
