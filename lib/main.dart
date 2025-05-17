@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import 'package:firebase_core/firebase_core.dart';  // Add this import
 import 'home_screen.dart';
 import 'models/user_provider.dart';
+import 'services/mock_moisture_service.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();        // Required for async in main
