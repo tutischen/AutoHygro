@@ -52,21 +52,70 @@ class _HomeScreenState extends State<HomeScreen> {
         backgroundColor: Colors.blueAccent,
       ),
       drawer: Drawer(
-        // Optional: Add your drawer content here
         child: ListView(
+          padding: EdgeInsets.zero,
           children: [
             DrawerHeader(
-              decoration: BoxDecoration(color: Colors.blueAccent),
+              decoration: BoxDecoration(
+                color: Colors.blueAccent,
+              ),
               child: Text(
-                "Menü",
-                style: TextStyle(color: Colors.white, fontSize: 24),
+                'Menü',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 24,
+                ),
               ),
             ),
             ListTile(
-              leading: Icon(Icons.person),
-              title: Text("Profil"),
+              leading: Icon(Icons.home),
+              title: Text('Ana Sayfa'),
               onTap: () {
-                Navigator.push(context, MaterialPageRoute(builder: (_) => ProfilePage()));
+                Navigator.pop(context); // just close drawer
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.agriculture),
+              title: Text('Tarlalarımı Kontrol Et'),
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => FieldCheckScreen()),
+                );
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.local_florist),
+              title: Text('Bitki Bilgisi'),
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => PlantInfoScreen()),
+                );
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.chat),
+              title: Text('Yapay Zeka Asistanı'),
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => AiChatScreen()),
+                );
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.settings),
+              title: Text('Ayarlar'),
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => ProfilePage()),
+                );
               },
             ),
           ],
